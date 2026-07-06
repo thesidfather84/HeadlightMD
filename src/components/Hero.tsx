@@ -1,6 +1,6 @@
 import { ShieldCheckIcon, SunIcon, ClockIcon, CheckCircleIcon, StarIcon, ArrowRightIcon, PlusIcon } from "./Icons";
 import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY } from "../lib/constants";
-import ownerPhoto from "../assets/owner-photo.jpg";
+import heroPhoto from "../assets/hero-photo.jpg";
 
 const TRUST_ICONS = [
   { icon: ShieldCheckIcon, label: "Improves Visibility & Night Safety" },
@@ -12,10 +12,31 @@ const TRUST_ICONS = [
 export default function Hero() {
   return (
     <section id="top" className="relative bg-ink text-white overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Photo constrained to the right side so the crop stays proportional instead of stretching across the full (much wider) section */}
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[62%]">
+        <img
+          src={heroPhoto}
+          alt="Charles, the HeadlightMD headlight restoration technician, standing beside a vehicle with a restored headlight"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_top]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/30 via-20% to-transparent" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+      {/* Mobile: photo isn't split into a side column, so a stronger uniform scrim keeps text legible regardless of crop */}
+      <div className="absolute inset-0 bg-ink/55 lg:hidden" />
+      <div className="absolute top-1/3 right-[20%] w-[380px] h-[380px] bg-blue/20 rounded-full blur-[110px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
-        <div className="max-w-2xl animate-fade-in">
+      <div className="hidden lg:flex absolute top-8 right-8 z-20 flex-col items-center gap-1.5">
+        <div className="w-11 h-11 rounded-full border-2 border-blue bg-ink/70 backdrop-blur flex items-center justify-center text-blue">
+          <PlusIcon className="w-5 h-5" />
+        </div>
+        <span className="text-[10px] font-bold uppercase tracking-widest text-center leading-tight w-20">
+          Your Headlight Doctor
+        </span>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 py-16 lg:py-24">
+        <div className="max-w-xl animate-fade-in">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tight mb-6 leading-[1.05]">
             Restore Clarity.
             <br />
@@ -67,24 +88,6 @@ export default function Hero() {
               Text Now: {PHONE_PRIMARY_DISPLAY}
             </a>
           </div>
-        </div>
-
-        <div className="hidden lg:block relative">
-          <div className="absolute top-4 right-4 z-20 flex flex-col items-center gap-2">
-            <div className="w-14 h-14 rounded-full border-2 border-blue bg-ink/80 backdrop-blur flex items-center justify-center text-blue">
-              <PlusIcon className="w-6 h-6" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-widest text-center leading-snug w-24">
-              Your Headlight Doctor
-            </span>
-          </div>
-
-          <div className="absolute -inset-6 bg-blue/10 rounded-lg blur-3xl pointer-events-none" />
-          <img
-            src={ownerPhoto}
-            alt="Charles, the HeadlightMD headlight restoration technician"
-            className="relative w-full rounded-lg shadow-2xl object-cover ring-1 ring-white/10"
-          />
         </div>
       </div>
     </section>
