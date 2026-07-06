@@ -9,6 +9,7 @@ import WhyRestore from "./components/WhyRestore";
 import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
+import DIYKit from "./components/DIYKit";
 import Footer from "./components/Footer";
 import StickyCallBar from "./components/StickyCallBar";
 
@@ -26,6 +27,7 @@ export default function App() {
       <Reviews />
       <FAQ />
       <Contact />
+      <DIYKit />
       <Footer />
       <StickyCallBar />
     </div>
