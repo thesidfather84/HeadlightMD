@@ -1,5 +1,6 @@
 import { CheckIcon, DollarIcon, ShieldIcon, CarIcon, ClockIcon } from "./Icons";
 import { EMAIL, LEGAL_NAME } from "../lib/constants";
+import kitBox from "../assets/diy-headlight-restoration-kit-box.webp";
 
 const BENEFITS = [
   "Improves night driving visibility",
@@ -66,20 +67,32 @@ export default function DIYKit() {
             </a>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-lg p-8">
-            <div className="flex items-center gap-2 mb-5 text-blue font-bold uppercase tracking-widest text-xs">
-              <ClockIcon className="w-4 h-4" />
-              30 Minutes or Less
+          <div>
+            <div className="relative mb-6">
+              <div className="absolute -inset-4 bg-blue/10 rounded-lg blur-2xl pointer-events-none" />
+              <img
+                src={kitBox}
+                alt="DIY Headlight Restoration Kit box, coming soon from HeadlightMD"
+                className="relative w-full max-w-sm mx-auto rounded-lg shadow-2xl ring-1 ring-white/10"
+                loading="lazy"
+              />
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">Kit Includes</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
-              {KIT_INCLUDES.map((item) => (
-                <li key={item} className="text-sm text-gray-300 flex items-start gap-2">
-                  <span className="text-blue mt-1">&bull;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+
+            <div className="bg-white/5 border border-white/10 rounded-lg p-8">
+              <div className="flex items-center gap-2 mb-5 text-blue font-bold uppercase tracking-widest text-xs">
+                <ClockIcon className="w-4 h-4" />
+                30 Minutes or Less
+              </div>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">Kit Includes</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
+                {KIT_INCLUDES.map((item) => (
+                  <li key={item} className="text-sm text-gray-300 flex items-start gap-2">
+                    <span className="text-blue mt-1">&bull;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
