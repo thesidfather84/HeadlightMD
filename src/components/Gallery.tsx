@@ -1,3 +1,4 @@
+import DiagonalCompare from "./DiagonalCompare";
 import before1 from "../assets/before-1.jpg";
 import after1 from "../assets/after-1.jpg";
 import before2 from "../assets/before-2.jpg";
@@ -21,35 +22,16 @@ export default function Gallery() {
           <p className="text-gray-600 text-lg">Before &amp; after photos from actual HeadlightMD restorations</p>
         </div>
 
-        <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {PAIRS.map((pair, idx) => (
-            <div
+            <DiagonalCompare
               key={idx}
-              className="grid grid-cols-2 gap-1 overflow-hidden rounded-sm shadow-lg ring-1 ring-black/5"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={pair.before}
-                  alt={`Before headlight restoration ${idx + 1}`}
-                  loading="lazy"
-                  className="w-full h-56 md:h-72 object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-navy/90 backdrop-blur-sm text-white px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-sm">
-                  Before
-                </div>
-              </div>
-              <div className="relative overflow-hidden">
-                <img
-                  src={pair.after}
-                  alt={`After headlight restoration ${idx + 1}`}
-                  loading="lazy"
-                  className="w-full h-56 md:h-72 object-cover"
-                />
-                <div className="absolute top-3 right-3 bg-blue text-white px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-sm shadow-lg">
-                  After
-                </div>
-              </div>
-            </div>
+              before={pair.before}
+              after={pair.after}
+              beforeAlt={`Before headlight restoration ${idx + 1}`}
+              afterAlt={`After headlight restoration ${idx + 1}`}
+              className="h-64"
+            />
           ))}
         </div>
 

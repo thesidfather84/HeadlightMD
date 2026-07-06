@@ -39,7 +39,7 @@ export default function Contact() {
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight mb-4 text-navy uppercase">
-            Schedule Your Appointment
+            Book Your Appointment
           </h2>
           <div className="w-16 h-1 bg-blue mx-auto" />
         </div>
@@ -136,7 +136,7 @@ export default function Contact() {
                   disabled={status === "sending"}
                   className="w-full bg-navy text-white py-4 font-black uppercase tracking-wide hover:bg-blue transition-colors disabled:opacity-60 disabled:cursor-not-allowed rounded-sm text-lg"
                 >
-                  {status === "sending" ? "Sending..." : "Request Appointment"}
+                  {status === "sending" ? "Sending..." : "Book Appointment"}
                 </button>
 
                 <div className="pt-4 border-t border-gray-100">

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { PlusIcon, MenuIcon, CloseIcon } from "./Icons";
-import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY } from "../lib/constants";
+import { MenuIcon, CloseIcon, CalendarIcon } from "./Icons";
+import Logo from "./Logo";
 
 const NAV_LINKS = [
+  { href: "#top", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#treatments", label: "Treatments" },
-  { href: "#results", label: "Results" },
+  { href: "#services", label: "Services" },
+  { href: "#results", label: "Gallery" },
   { href: "#reviews", label: "Reviews" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
@@ -15,37 +16,39 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur text-navy border-b border-gray-200">
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-1.5 font-black tracking-tight text-lg uppercase text-navy">
-          <PlusIcon className="w-4 h-4 text-blue" />
-          Headlight<span className="text-blue">MD</span>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+      <div className="container mx-auto px-6 h-[72px] flex items-center justify-between">
+        <a href="#top">
+          <Logo variant="dark" />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
+        <nav className="hidden lg:flex items-center gap-8">
+          {NAV_LINKS.map((link, idx) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-blue transition-colors"
+              className={
+                idx === 0
+                  ? "text-sm font-bold text-blue border-b-2 border-blue pb-1"
+                  : "text-sm font-bold text-navy/70 hover:text-blue transition-colors"
+              }
             >
-              {link.label}
+              {link.label.toUpperCase()}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <a
-            href={`tel:${PHONE_PRIMARY}`}
-            className="inline-flex items-center bg-navy text-white px-5 py-2.5 text-sm font-bold uppercase tracking-wide rounded-sm hover:bg-blue transition-colors"
-          >
-            Call {PHONE_PRIMARY_DISPLAY}
-          </a>
-        </div>
+        <a
+          href="#contact"
+          className="hidden lg:inline-flex items-center gap-2 bg-blue text-white px-5 py-2.5 text-sm font-bold rounded-md hover:bg-navy transition-colors"
+        >
+          BOOK APPOINTMENT
+          <CalendarIcon className="w-4 h-4" />
+        </a>
 
         <button
           type="button"
-          className="md:hidden p-2 -mr-2 text-navy"
+          className="lg:hidden p-2 -mr-2 text-navy"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -55,22 +58,24 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="md:hidden border-t border-gray-200 px-6 py-4 flex flex-col gap-4">
+        <nav className="lg:hidden border-t border-gray-200 px-6 py-4 flex flex-col gap-4">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-base font-medium text-gray-700 hover:text-blue transition-colors"
+              className="text-base font-bold text-navy/80 hover:text-blue transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
-            href={`tel:${PHONE_PRIMARY}`}
-            className="inline-flex items-center justify-center bg-navy text-white px-5 py-3 text-sm font-bold uppercase tracking-wide rounded-sm mt-1"
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center gap-2 bg-blue text-white px-5 py-3 text-sm font-bold rounded-md mt-1"
           >
-            Call {PHONE_PRIMARY_DISPLAY}
+            BOOK APPOINTMENT
+            <CalendarIcon className="w-4 h-4" />
           </a>
         </nav>
       )}

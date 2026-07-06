@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: "#070B14",
         navy: "#0B2545",
         blue: {
-          DEFAULT: "#2E7BC3",
-          light: "#EAF4FC",
+          DEFAULT: "#2563EB",
+          light: "#EAF2FE",
         },
         cloud: "#F5F7FA",
       },

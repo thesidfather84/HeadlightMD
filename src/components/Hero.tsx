@@ -1,69 +1,89 @@
-import { PlusIcon } from "./Icons";
-import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY, PHONE_SECONDARY, PHONE_SECONDARY_DISPLAY } from "../lib/constants";
+import { ShieldCheckIcon, SunIcon, ClockIcon, CheckCircleIcon, StarIcon, ArrowRightIcon, PlusIcon } from "./Icons";
+import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY } from "../lib/constants";
 import ownerPhoto from "../assets/owner-photo.jpg";
+
+const TRUST_ICONS = [
+  { icon: ShieldCheckIcon, label: "Improves Visibility & Night Safety" },
+  { icon: SunIcon, label: "Removes Oxidation & Yellowing" },
+  { icon: ClockIcon, label: "Save Time & Money vs. Replacement" },
+  { icon: CheckCircleIcon, label: "Professional Results" },
+];
 
 export default function Hero() {
   return (
-    <section id="top" className="relative bg-gradient-to-b from-blue-light to-white overflow-hidden py-20 lg:py-28">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue/10 rounded-full blur-[120px] pointer-events-none" />
+    <section id="top" className="relative bg-ink text-white overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
         <div className="max-w-2xl animate-fade-in">
-          <div className="mb-4 flex items-center gap-2 text-blue font-bold tracking-widest uppercase text-sm">
-            <PlusIcon className="w-4 h-4" />
-            <span className="tracking-[0.2em]">Mobile Headlight Restoration Specialist</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1] text-navy">
-            Your Headlight <span className="text-blue">Doctor.</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tight mb-6 leading-[1.05]">
+            Restore Clarity.
+            <br />
+            <span className="text-blue">Drive Safer.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-4 leading-relaxed font-medium">
-            Restore Your Vision. Restore Your Safety.
-          </p>
-          <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed">
-            Professional mobile headlight restoration that comes to you. We treat cloudy, yellowed, and oxidized
-            headlights with a long-lasting, professional-grade process &mdash; right in your driveway.
+          <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
+            We bring back the clarity to your headlights so you can see better and drive with confidence.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`tel:${PHONE_PRIMARY}`}
-              className="inline-flex items-center justify-center bg-navy text-white px-8 py-4 text-lg font-bold hover:bg-blue transition-colors uppercase tracking-wide rounded-sm shadow-lg shadow-navy/10"
-            >
-              Call Now
-            </a>
-            <a
-              href={`sms:${PHONE_PRIMARY}`}
-              className="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-4 text-lg font-bold transition-colors uppercase tracking-wide rounded-sm"
-            >
-              Text Now
-            </a>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-10 max-w-xl">
+            {TRUST_ICONS.map((item) => (
+              <div key={item.label} className="flex flex-col items-start gap-2">
+                <div className="w-11 h-11 rounded-full border-2 border-blue flex items-center justify-center text-blue">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wide text-gray-300 leading-snug">
+                  {item.label}
+                </span>
+              </div>
+            ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-500 pt-6">
-            <a href={`tel:${PHONE_PRIMARY}`} className="hover:text-blue transition-colors">
-              {PHONE_PRIMARY_DISPLAY}
+          <div className="flex flex-wrap items-center gap-5 mb-6">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-blue text-white px-7 py-4 text-base font-bold rounded-md hover:bg-blue-700 hover:brightness-110 transition uppercase tracking-wide shadow-lg shadow-blue/20"
+            >
+              Book Appointment
+              <ArrowRightIcon />
             </a>
-            <span className="hidden sm:inline">&middot;</span>
-            <a href={`tel:${PHONE_SECONDARY}`} className="hover:text-blue transition-colors">
-              {PHONE_SECONDARY_DISPLAY}
-            </a>
+            <div className="flex flex-col gap-1">
+              <div className="flex gap-0.5 text-amber-400">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <StarIcon key={i} className="w-4 h-4" />
+                ))}
+              </div>
+              <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                Trusted by Local Drivers
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-3 pt-10 text-sm text-gray-500 border-t border-gray-200 mt-10">
-            <span>Mobile &mdash; we come to you</span>
-            <span>Locally owned</span>
-            <span>Fast, same-day service</span>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href={`tel:${PHONE_PRIMARY}`} className="font-semibold text-gray-300 hover:text-blue transition-colors">
+              Call Now: {PHONE_PRIMARY_DISPLAY}
+            </a>
+            <a href={`sms:${PHONE_PRIMARY}`} className="font-semibold text-gray-300 hover:text-blue transition-colors">
+              Text Now: {PHONE_PRIMARY_DISPLAY}
+            </a>
           </div>
         </div>
 
         <div className="hidden lg:block relative">
-          <div className="absolute -inset-4 bg-blue/10 rounded-lg blur-2xl pointer-events-none" />
+          <div className="absolute top-4 right-4 z-20 flex flex-col items-center gap-2">
+            <div className="w-14 h-14 rounded-full border-2 border-blue bg-ink/80 backdrop-blur flex items-center justify-center text-blue">
+              <PlusIcon className="w-6 h-6" />
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest text-center leading-snug w-24">
+              Your Headlight Doctor
+            </span>
+          </div>
+
+          <div className="absolute -inset-6 bg-blue/10 rounded-lg blur-3xl pointer-events-none" />
           <img
             src={ownerPhoto}
             alt="Charles, the HeadlightMD headlight restoration technician"
-            className="relative w-full max-w-md ml-auto rounded-sm shadow-2xl object-cover ring-1 ring-black/5"
+            className="relative w-full rounded-lg shadow-2xl object-cover ring-1 ring-white/10"
           />
         </div>
       </div>

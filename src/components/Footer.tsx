@@ -1,4 +1,5 @@
-import { PlusIcon, MailIcon } from "./Icons";
+import { MailIcon } from "./Icons";
+import Logo from "./Logo";
 import {
   EMAIL,
   LEGAL_NAME,
@@ -13,13 +14,7 @@ export default function Footer() {
     <footer className="bg-navy text-white py-12 border-t-4 border-blue">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="text-2xl font-black tracking-tighter uppercase flex items-center gap-1">
-            <PlusIcon className="w-5 h-5 text-blue" />
-            Headlight<span className="text-blue">MD</span>
-            <span className="text-sm font-medium tracking-normal ml-2 text-gray-300 capitalize">
-              Mobile Restoration
-            </span>
-          </span>
+          <Logo variant="light" />
           <a href={`tel:${PHONE_PRIMARY}`} className="text-gray-300 hover:text-blue font-medium transition-colors mt-2">
             {PHONE_PRIMARY_DISPLAY}
           </a>

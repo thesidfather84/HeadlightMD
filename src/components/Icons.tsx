@@ -184,3 +184,84 @@ export function ChevronDownIcon({ className = "w-5 h-5" }: IconProps) {
     </svg>
   );
 }
+
+export function ShieldCheckIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.5l2 2 4-4.5" />
+    </svg>
+  );
+}
+
+export function ClockIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3.5 2" />
+    </svg>
+  );
+}
+
+export function CheckCircleIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 12.5l2.3 2.3L16 10" />
+    </svg>
+  );
+}
+
+export function CalendarIcon({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path strokeLinecap="round" d="M3 10h18M8 3v4M16 3v4" />
+    </svg>
+  );
+}
+
+export function ArrowRightIcon({ className = "w-4 h-4" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+export function EyeIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"
+      />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export function DollarIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3v18M16.5 7.5c0-1.66-2.01-3-4.5-3s-4.5 1.34-4.5 3 2.01 2.5 4.5 2.5 4.5 1.34 4.5 3-2.01 3-4.5 3-4.5-1.34-4.5-3"
+      />
+    </svg>
+  );
+}
+
+export function ThumbsUpIcon({ className = "w-7 h-7" }: IconProps) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 10v11H4a1 1 0 01-1-1v-9a1 1 0 011-1h3zm0 0l4.5-7a2 2 0 013.5 1.5V9h4.28a2 2 0 011.96 2.4l-1.4 7A2 2 0 0117.4 20H9a2 2 0 01-2-2v-8z"
+      />
+    </svg>
+  );
+}
