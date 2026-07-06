@@ -5,7 +5,7 @@ const REASONS = [
     icon: EyeIcon,
     title: "Better Visibility",
     description:
-      "Clear lenses let your headlights project light the way they were designed to, so you can see the road clearly at night and in rain or fog.",
+      "Clear lenses let your headlights project light the way they were designed to, improving night driving safety and visibility in rain or fog.",
   },
   {
     icon: ShieldIcon,

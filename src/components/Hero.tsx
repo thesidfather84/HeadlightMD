@@ -1,6 +1,7 @@
 import { ShieldCheckIcon, SunIcon, ClockIcon, CheckCircleIcon, StarIcon, ArrowRightIcon, PlusIcon } from "./Icons";
 import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY } from "../lib/constants";
-import heroPhoto from "../assets/hero-photo.jpg";
+
+const heroPhoto = "/images/mobile-headlight-restoration-hero.webp";
 
 const TRUST_ICONS = [
   { icon: ShieldCheckIcon, label: "Improves Visibility & Night Safety" },
@@ -16,8 +17,10 @@ export default function Hero() {
       <div className="absolute inset-y-0 right-0 w-full lg:w-[62%]">
         <img
           src={heroPhoto}
-          alt="Charles, the HeadlightMD headlight restoration technician, standing beside a vehicle with a restored headlight"
+          alt="HeadlightMD mobile headlight restoration technician standing beside a vehicle with a professionally restored, glowing headlight"
           className="absolute inset-0 w-full h-full object-cover object-[70%_top]"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/30 via-20% to-transparent" />
       </div>
@@ -44,7 +47,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
-            We bring back the clarity to your headlights so you can see better and drive with confidence.
+            HeadlightMD's mobile headlight restoration service restores cloudy, oxidized headlights back to
+            crystal clarity so you can see better and drive with confidence at night.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-10 max-w-xl">

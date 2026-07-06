@@ -1,6 +1,11 @@
 import { ChevronDownIcon } from "./Icons";
+import { LEGAL_NAME, YEARS_IN_BUSINESS } from "../lib/constants";
 
 const FAQS = [
+  {
+    question: "How long has HeadlightMD been in business?",
+    answer: `HeadlightMD is owned and operated by ${LEGAL_NAME}, an established company with over ${YEARS_IN_BUSINESS} years of experience restoring headlights.`,
+  },
   {
     question: "What does headlight restoration actually involve?",
     answer:
@@ -9,7 +14,7 @@ const FAQS = [
   {
     question: "Do I need to bring my car to a shop?",
     answer:
-      "No. HeadlightMD is a mobile service — we come to you at your home or workplace with everything needed to complete the restoration on site.",
+      "No. HeadlightMD is a mobile headlight restoration service — we come to you at your home or workplace with everything needed to complete the restoration on site, so you don't need to search for a shop offering headlight restoration near me.",
   },
   {
     question: "How long does a restoration take?",

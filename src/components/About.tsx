@@ -1,6 +1,6 @@
 import { PlusIcon } from "./Icons";
-import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY } from "../lib/constants";
-import ownerPhoto from "../assets/owner-photo.jpg";
+import { PHONE_PRIMARY, PHONE_PRIMARY_DISPLAY, LEGAL_NAME, YEARS_IN_BUSINESS } from "../lib/constants";
+import ownerPhoto from "../assets/headlightmd-technician.webp";
 
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
             <div className="absolute -inset-2 bg-blue/5 rounded-sm blur-2xl pointer-events-none" />
             <img
               src={ownerPhoto}
-              alt="Charles Bruns, owner of HeadlightMD"
+              alt="Charles Bruns, HeadlightMD technician, performing mobile headlight restoration"
               className="relative w-full max-w-md mx-auto lg:mx-0 rounded-sm shadow-xl object-cover ring-1 ring-black/5"
             />
             <div className="absolute bottom-4 left-4 bg-navy text-white px-4 py-2 text-sm font-black uppercase tracking-wider rounded-sm shadow-lg">
@@ -32,8 +32,9 @@ export default function About() {
             </div>
 
             <p className="text-gray-600 text-lg leading-relaxed">
-              With years of hands-on automotive restoration experience, Charles founded Special Delivery
-              Headlight Restoration to bring professional-grade results directly to your driveway.
+              HeadlightMD is the consumer-facing brand of {LEGAL_NAME}, a company Charles has run for over{" "}
+              {YEARS_IN_BUSINESS} years. In that time he's built his reputation on bringing professional-grade
+              headlight restoration results directly to customers' driveways, not the other way around.
             </p>
             <p className="text-gray-500 leading-relaxed">
               No shop visits. No waiting. He shows up with the tools, the process, and the expertise to take

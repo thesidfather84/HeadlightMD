@@ -1,0 +1,17 @@
+{
+  "name": "HeadlightMD | Special Delivery Headlight Restoration LLC",
+  "short_name": "HeadlightMD",
+  "description": "Mobile headlight restoration serving the Mississippi Gulf Coast.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070B14",
+  "theme_color": "#0B2545",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

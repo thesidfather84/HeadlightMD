@@ -15,6 +15,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Logo variant="light" />
+          <p className="text-xs text-gray-400 -mt-1">A Brand of {LEGAL_NAME}</p>
           <a href={`tel:${PHONE_PRIMARY}`} className="text-gray-300 hover:text-blue font-medium transition-colors mt-2">
             {PHONE_PRIMARY_DISPLAY}
           </a>
@@ -31,7 +32,6 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-right max-w-xs md:max-w-md text-gray-400 text-xs leading-relaxed">
-          <p className="mb-2 text-gray-300">{LEGAL_NAME}</p>
           <p className="mb-2">
             Results may vary depending on headlight condition, oxidation severity, damage, and prior restoration
             attempts.

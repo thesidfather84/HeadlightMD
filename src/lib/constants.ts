@@ -1,5 +1,8 @@
 export const BUSINESS_NAME = "HeadlightMD";
 export const LEGAL_NAME = "Special Delivery Headlight Restoration LLC";
+export const YEARS_IN_BUSINESS = 11;
+export const FOUNDING_YEAR = "2015";
+export const WEBSITE_URL = "https://headlightmd.com";
 
 export const PHONE_PRIMARY = "2282549029";
 export const PHONE_PRIMARY_DISPLAY = "228-254-9029";

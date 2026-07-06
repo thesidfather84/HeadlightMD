@@ -27,8 +27,8 @@ const SERVICES = [
     icon: ShieldIcon,
   },
   {
-    title: "Mobile Service At Your Location",
-    description: "We bring the full restoration process to your home or workplace.",
+    title: "Mobile Headlight Restoration",
+    description: "We bring the full headlight lens restoration process to your home or workplace.",
     icon: CarIcon,
   },
 ];
@@ -39,7 +39,11 @@ export default function Services() {
       <div className="mx-auto px-6 container">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight mb-4 text-navy uppercase">Our Services</h2>
-          <div className="w-16 h-1 bg-blue mx-auto" />
+          <div className="w-16 h-1 bg-blue mx-auto mb-4" />
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Professional headlight restoration and headlight lens restoration services, all performed on site
+            as part of our mobile headlight restoration process.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
